@@ -214,20 +214,20 @@ def download_wav(text: str, wav_path: Path) -> None:
         _sleep_with_jitter(backoff)
 
 
-def convert_wav_to_ogg(wav_path: Path, ogg_path: Path) -> None:
+def convert_wav_to_ogg(wav_path: Path, ogg_path: Path, gain_db: float = 8.0, limit_peak: float = 0.95) -> None:
     """
-    Converts WAV -> OGG (Vorbis) using ffmpeg.
+    Converts WAV -> OGG (Vorbis) using ffmpeg, applies gain, and a peak limiter to avoid clipping.
     """
     ogg_path.parent.mkdir(parents=True, exist_ok=True)
+    # Chain: volume -> limiter
+    af = f"volume={gain_db}dB,alimiter=limit={limit_peak}"
     cmd = [
         "ffmpeg",
         "-y",
-        "-i",
-        str(wav_path),
-        "-codec:a",
-        "libvorbis",
-        "-qscale:a",
-        VORBIS_QSCALE,
+        "-i", str(wav_path),
+        "-filter:a", af,
+        "-codec:a", "libvorbis",
+        "-qscale:a", VORBIS_QSCALE,
         str(ogg_path),
     ]
     subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL,

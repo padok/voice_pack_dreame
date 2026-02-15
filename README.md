@@ -4,7 +4,7 @@ This project provides a Portal‑themed sarcastic GLaDOS voice pack for Dreame�
 The prebuilt archive can be used directly in Valetudo.
 
 MD5 sum of the prepackaged `voice_pack.tar.gz`:  
-`7a92bb665d7b74fcf94df95d2ed579db`
+`2ce786fef07fdb039d6c1e3f075e1021`
 
 Tested and confirmed working on:
 
@@ -20,8 +20,8 @@ Tested and confirmed working on:
 1. Enter the following information in the "Voice packs" section:
     - URL: `https://github.com/padok/voice_pack_dreame/raw/main/voice_pack.tar.gz`
     - Language Code: `GLADOS`
-    - Hash: `7a92bb665d7b74fcf94df95d2ed579db`
-    - File size: `8321365` bytes
+    - Hash: `2ce786fef07fdb039d6c1e3f075e1021`
+    - File size: `8840314` bytes
 1. Click "Set Voice Pack"
 
 ## 🛠️ Development
