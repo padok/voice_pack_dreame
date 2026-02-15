@@ -1,5 +1,25 @@
+# --- IDE / Editor ---
 .idea/
-backups/
-data/
-tmp/
-db.yaml
+.vscode/
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# --- Project output ---
+# output/
+output_archive/
+
+# --- OS / Misc ---
+.DS_Store
+Thumbs.db

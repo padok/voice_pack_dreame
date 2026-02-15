@@ -1,29 +1,53 @@
 # GLaDOS Voice Pack for Dreame Vacuum Robots
 
-Uses voice generation by [15.ai](https://15.ai/).
+This project provides a Portal‑themed sarcastic GLaDOS voice pack for Dreame‑based vacuum robots, generated using 👉 [glados.c-net.org](https://glados.c-net.org/).
+The prebuilt archive can be used directly in Valetudo.
 
 MD5 sum of the prepackaged `voice_pack.tar.gz`:  
-`8ebfabb9e23e169a5c9b867266f9d1ef`
+`7a92bb665d7b74fcf94df95d2ed579db`
 
-Works at least with `L10 Pro`, `Z10 Pro`, `W10`, and `D9`.
+Tested and confirmed working on:
 
-## Installation
+- L10 Pro
+- L10S Pro Ultra Heat
+- Z10 Pro
+- W10
+- D9
+
+## 🚀 Installation (via Valetudo)
 
 1. In Valetudo go to "Robot Settings" -> "Misc Settings"
 1. Enter the following information in the "Voice packs" section:
-    - URL: `https://github.com/Findus23/voice_pack_dreame/raw/main/voice_pack.tar.gz`
+    - URL: `https://github.com/padok/voice_pack_dreame/raw/main/voice_pack.tar.gz`
     - Language Code: `GLADOS`
-    - Hash: `8ebfabb9e23e169a5c9b867266f9d1ef`
-    - File size: `4325024` byte
+    - Hash: `7a92bb665d7b74fcf94df95d2ed579db`
+    - File size: `8321365` bytes
 1. Click "Set Voice Pack"
 
-Interestingly on my L10 Pro running `Valetudo 2022.03.0` the .tar.gz doesn't seem to work and the newly created folder `/data/personalized_voice/GLADOS` stays empty.
-However, the language code is set correctly in Valetudo and manually copying the files into the right directory works:
+## 🛠️ Development
 
-```
-git clone https://github.com/Findus23/voice_pack_dreame
-scp voice_pack_dreame/output/* root@<YOUR_ROBOT_ADDRESS>:/data/personalized_voice/GLADOS
+This project includes scripts that automatically generate and package the audio files.
+
+To build everything:
+
+```shell
+poetry install
+poetry run glados-audio
+poetry run make-release
 ```
 
------
-Thanks to https://github.com/ccoors/dreame_voice_packs for the inspiration and the list of sounds and 15.ai for the voice generation.
+This will:
+
+- Download/generate all GLaDOS audio files
+- Encode them to OGG
+- Build the voice_pack.tar.gz release file
+
+
+## 🙏 Thanks
+Special thanks to:
+
+https://glados.c-net.org/ — for the amazing voice generation
+Findus23: https://github.com/Findus23/voice_pack_dreame
+ccoors: https://github.com/ccoors/dreame_voice_packs
+
+Both provided inspiration and original lists of Dreame sound IDs.
