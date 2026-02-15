@@ -19,7 +19,7 @@ Tested and confirmed working on:
 1. In Valetudo go to "Robot Settings" -> "Misc Settings"
 1. Enter the following information in the "Voice packs" section:
     - URL: `https://github.com/padok/voice_pack_dreame/raw/main/voice_pack.tar.gz`
-    - Language Code: `GLADOS`
+    - Language Code: `glados`
     - Hash: `2ce786fef07fdb039d6c1e3f075e1021`
     - File size: `8840314` bytes
 1. Click "Set Voice Pack"
